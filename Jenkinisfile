@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                git "https://github.com/Ayush-ops16/remote.git"
+            }
+        }
+         stage('Build') {
+            steps {
+                
+                bat "javac Hello.java"
+            }
+        }
+         stage('execute') {
+            steps {
+                bat "java Hello"
+            }
+        }
+    }
+}
